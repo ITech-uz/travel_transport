@@ -4,10 +4,69 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Travel Transport</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/d5b956fb36.js" crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- JQEURY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- JS script -->
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JQEURY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(() => {
+        AOS.init();
+
+
+        // change navbar bg on scroll
+        const navbar = document.querySelector('.navbar');
+        const navBrand = document.querySelector('.navbar-brand');
+        const navLink = document.querySelector('.nav-link');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY >= 56) {
+            navbar.classList.add('navbar-scrolled');
+            navBrand.classList.add(`navbar-brand-scrolled`);
+            navLink.classList.add(`nav-link-scrolled`);
+          } else {
+            navbar.classList.remove(`navbar-scrolled`);
+            navBrand.classList.remove(`navbar-brand-scrolled`);
+            navLink.classList.remove(`nav-link-scrolled`);
+          }
+        });
+
+        // scroll to Top button - rocket icon
+        $('#topControl').click(() => {
+          $("html, body").scrollTop(0);
+          return false;
+        });
+
+        // scrollSpy
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+          rootMargin: '0px 0px -10%',
+          smoothScroll: true
+        });
+        scrollSpy.refresh();
+      })
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
