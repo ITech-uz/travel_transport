@@ -1,7 +1,6 @@
-import { Carousel } from 'react-responsive-carousel';
 const CarouselComponent = () => {
   return (
-    <Carousel id="carouselTravelWasp" className="carousel slide container-fluid" data-bs-ride="carousel">
+    <div id="carouselTravelWasp" className="carousel slide container-fluid" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src="/imgs/carousel/hike.jpg" className="d-block w-100" alt="walk with nature"/>
@@ -27,7 +26,7 @@ const CarouselComponent = () => {
           </p>
         </div>
       </div>
-    </Carousel>
+    </div>
   );
 };
 
